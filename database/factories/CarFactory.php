@@ -20,11 +20,11 @@ class CarFactory extends Factory
         return [
             'brand' => $this->faker->randomElement(['audi', 'bmw', 'tesla']),
             'model' =>  Str::random(10),
-            'year' => $this->faker->numberBetween(1960, 2022),
-            'max_speed' => $this->faker->numberBetween(0, 500),
+            'year' => $this->faker->numberBetween(1990, 2022),
+            'max_speed' => $this->faker->numberBetween(20, 300),
             'is_automatic' => $this->faker->boolean(),
             'engine' => $this->faker->randomElement(['diesel', 'electric', 'petrol', 'hybird']),
-            'number_of_doors' =>  $this->faker->numberBetween(2, 10),
+            'number_of_doors' =>  $this->faker->numberBetween(2, 5),
 
         ];
     }
