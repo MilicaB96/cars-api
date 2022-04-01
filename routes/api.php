@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
@@ -24,3 +25,6 @@ Route::get('cars/{car}', [CarController::class, 'show']);
 Route::post('cars', [CarController::class, 'store']);
 Route::put('cars/{car}', [CarController::class, 'update']);
 Route::delete('cars/{car}', [CarController::class, 'destroy']);
+
+
+Route::post('login', [AuthController::class, 'login']);
