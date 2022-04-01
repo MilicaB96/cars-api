@@ -28,3 +28,4 @@ Route::delete('cars/{car}', [CarController::class, 'destroy']);
 
 
 Route::post('login', [AuthController::class, 'login']);
+Route::post('logout', [AuthController::class, 'logout']);

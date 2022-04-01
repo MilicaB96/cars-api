@@ -23,4 +23,9 @@ class AuthController extends Controller
             compact('token', 'user')
         ]);
     }
+    public function logout()
+    {
+        Auth::logout();
+        return response(null, 204);
+    }
 }
