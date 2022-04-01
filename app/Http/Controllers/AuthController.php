@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,5 +29,14 @@ class AuthController extends Controller
     {
         Auth::logout();
         return response(null, 204);
+    }
+    public function register(RegisterRequest $request)
+    {
+        $data = $request->validated();
+        $user = User::create($data);
+        $token = Auth::login($user);
+        return response()->json([
+            compact('token', 'user')
+        ]);
     }
 }
